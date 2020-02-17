@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 
 public class BMICalculatorTest {
     @Test
-    public void categoryUnderweight(){
+    public void categoryUnderweight() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         WebDriver browser = new ChromeDriver();
         browser.get("https://healthunify.com/bmicalculator/");
@@ -15,12 +15,13 @@ public class BMICalculatorTest {
         browser.findElement(By.name("ht")).sendKeys("180");
         browser.findElement(By.name("cc")).click();
         String category = browser.findElement(By.name("desk")).getAttribute("value");
-        assertEquals(category,"Your category is Underweight", "Категория неверная");
+        assertEquals(category, "Your category is Underweight", "Категория неверная");
         browser.quit();
 
     }
+
     @Test
-    public void categoryNormal(){
+    public void categoryNormal() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         WebDriver browser = new ChromeDriver();
         browser.get("https://healthunify.com/bmicalculator/");
@@ -28,7 +29,7 @@ public class BMICalculatorTest {
         browser.findElement(By.name("ht")).sendKeys("176");
         browser.findElement(By.name("cc")).click();
         String category = browser.findElement(By.name("desk")).getAttribute("value");
-        assertEquals(category,"Your category is Normal", "Категория неверная");
+        assertEquals(category, "Your category is Normal", "Категория неверная");
         browser.quit();
 
     }
